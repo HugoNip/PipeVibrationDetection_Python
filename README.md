@@ -4,7 +4,7 @@ https://github.com/ruanxiang/mr_saliency.git
 ### Naming format reference
 https://mooseframework.inl.gov/framework_development/code_standards.html
 
-### How to push the local original code to Github 
+### How to push the local original code to Github
 https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
 
 ```
@@ -15,3 +15,8 @@ $ git remote add origin <remote repository URL>
 $ git remote -v
 $ git push origin master
 ```
+
+### Push your changes to GitHub -> Add to another branch and merge it
+git push  origin master:<BranchName> (it doesn't work)
+
+I use atom to push changes.
