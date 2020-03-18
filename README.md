@@ -15,6 +15,3 @@ $ git remote add origin <remote repository URL>
 $ git remote -v
 $ git push origin master
 ```
-
-### Push your changes to GitHub -> Add to another branch and merge it
-git push  origin master:<BranchName>
