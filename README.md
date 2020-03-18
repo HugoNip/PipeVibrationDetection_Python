@@ -11,9 +11,7 @@ https://help.github.com/en/github/importing-your-projects-to-github/adding-an-ex
 $ git init
 $ git add .
 $ git commit -m "First commit"
-$ git remote add origin remote repository URL
+$ git remote add origin <remote repository URL>
 $ git remote -v
 $ git push origin master
 ```
-
-### Push your changes to GitHub
