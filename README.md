@@ -3,7 +3,7 @@ This project is used to detect the pipe vibration. (updating)
 
 ### Dependencies
 Python >= 2.7 (tested on 3.7)  
-openCV >= 2.4 (tested on openCV4.4)
+OpenCV >= 2.4 (tested on openCV4.4)
 
 ### Saliency Detection Source
 https://github.com/ruanxiang/mr_saliency.git
