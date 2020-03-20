@@ -16,10 +16,11 @@ edge_des = './Frames_Edge/'
 video_path = os.path.join(video_dir,'C0002_Pipe.MP4')
 frame_path = os.path.join(img_dir,'*jpg')
 
-'''
+
 ################# Preparation #################
 ####### Convert Video to Images (Frames)#######
 ###############################################
+
 # Create a VideoCapture object and read from input file
 # If the input is the camera, pass 0 instead of the video file name
 cap = cv2.VideoCapture(video_path)
@@ -31,7 +32,7 @@ frame_height = int(cap.get(4))
 # print(frame_height)
 
 # Check if camera opened successfully
-if (cap.isOpened()== False): 
+if (cap.isOpened()== False):
   print("Error opening video stream or file")
 
 i = 0
@@ -43,7 +44,7 @@ while(cap.isOpened()):
         # Display the resulting frame
         cv2.imshow('Frame',frame)
         # Naming frames
-        if i < 10: 
+        if i < 10:
             frame_name = 'pipe000'+str(i)+'.jpg' # pipe0001.jpg
         elif i > 9 and i < 100:
             frame_name = 'pipe00'+str(i)+'.jpg' # pipe0011.jpg
@@ -60,7 +61,7 @@ while(cap.isOpened()):
         if cv2.waitKey(10) & 0xFF == ord('q'):
             break
     # Break the loop
-    else: 
+    else:
         break
 
     i += 1
@@ -69,7 +70,7 @@ while(cap.isOpened()):
 cap.release()
 # Closes all the frames
 cv2.destroyAllWindows()
-'''
+
 
 
 ################# Preparation ##################
@@ -95,7 +96,7 @@ for i in range(len(files)):
     img = cv2.imread(filename)
     height, width, layers = img.shape
     size = (width,height)
-    
+
     #inserting the frames into an image array
     frame_array.append(img)
 
@@ -125,7 +126,7 @@ while(cap.isOpened()):
     if ret == False:
         break
     # Naming frames
-    if i < 10: 
+    if i < 10:
         frame_name = 'pipe000'+str(i)+'.jpg' # pipe0001.jpg
     elif i > 9 and i < 100:
         frame_name = 'pipe00'+str(i)+'.jpg' # pipe0011.jpg
@@ -139,7 +140,7 @@ while(cap.isOpened()):
     # edge detection (not available)
     # edge = cv2.Canny(frame, cap.get(3), cap.get(4))
     # cv2.imwrite(edge_des + frame_name, edge)
-    
+
     # Saliency Detection (7s per image, with resolution of 1920 * 1080)
     mr = MR.MR_saliency() # initialization
     sal = mr.saliency(frame)
@@ -177,26 +178,34 @@ for f1 in files:
 ########### Read image from Webcam ###########
 ##############################################
 '''
+# Create a VideoCapture object and read from input file
+cap = cv2.VideoCapture(0)
+
+# Resolutions of the frame
+frame_width = int(cap.get(3))
+frame_height = int(cap.get(4))
+
 out = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (frame_width,frame_height))
 
 while(cap.isOpened()):
     # Capture frame-by-frame
     ret, frame = cap.read()
-    
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
     if ret == True:
         # Write the frame into the file 'output.avi'
         out.write(frame)
 
         # Display the resulting frame
         cv2.imshow('Frame', frame)
-        # Press Q on keyboard to  exit
-        
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+
     # Break the loop
-    else: 
+    else:
         break
 
+# When everything done, release the capture
 cap.release()
 cv2.destroyAllWindows()
 '''
