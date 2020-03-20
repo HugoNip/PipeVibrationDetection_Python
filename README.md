@@ -1,7 +1,7 @@
-## Introduction
+### Introduction
 This project is used to detect the pipe vibration. (updating)
 
-###Dependencies
+### Dependencies
 Python >= 2.7 (tested on 3.7)
 openCV >= 2.4 (tested on openCV4.4)
 
