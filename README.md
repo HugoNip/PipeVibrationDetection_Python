@@ -24,6 +24,8 @@ $ git push origin master
 ```
 
 ### Push your changes to GitHub -> Add to another branch and merge it
-git push  origin master:<BranchName> (it doesn't work)
+git push  origin master:<BranchName> (it doesn't work for me)
 
-I use atom to push changes.
+1. delete the local code  
+2. git clone <url>
+3. use atom to push/pull changes.
