@@ -8,6 +8,9 @@ OpenCV >= 2.4 (tested on openCV4.4)
 ### Saliency Detection Source
 https://github.com/ruanxiang/mr_saliency.git
 
+### Edge Detection Video_Source
+https://towardsdatascience.com/tutorial-build-a-lane-detector-679fd8953132
+
 ### Naming format reference
 https://mooseframework.inl.gov/framework_development/code_standards.html
 
